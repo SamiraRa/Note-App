@@ -41,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   child: Image.asset("assets/notes assets/Group 468@2x.png"),
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 30,
                 ),
                 const Expanded(
                     child: Padding(

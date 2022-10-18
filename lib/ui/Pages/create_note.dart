@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 class CreateNote extends StatefulWidget {
   const CreateNote({super.key});
@@ -25,7 +26,9 @@ class _CreateNoteState extends State<CreateNote> {
                           borderRadius: BorderRadius.circular(100)),
                       color: const Color(0xFFF6F6F6F6),
                       child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
                         icon: const Padding(
                           padding: EdgeInsets.fromLTRB(0, 0, 25, 0),
                           child: Icon(
@@ -141,15 +144,39 @@ class _CreateNoteState extends State<CreateNote> {
               //
               // BottomNavigationBar(items: items),
               Spacer(),
+
               Align(
                 alignment: Alignment.bottomLeft,
                 child: FloatingActionButton(
                   onPressed: () {},
-                  backgroundColor: Color(0xFFF6F6F6F6),
-                  child: Icon(
-                    Icons.image_outlined,
-                    color: Colors.grey,
-                    size: 36,
+                  child: SpeedDial(
+                    backgroundColor: Color(0xFFF6F6F6F6),
+                    child: Icon(
+                      Icons.image_outlined,
+                      color: Colors.grey,
+                      size: 36,
+                    ),
+                    children: [
+                      SpeedDialChild(
+                          child: Container(
+                            width: 25,
+                            height: 25,
+                            decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.white,
+                              image: DecorationImage(
+                                fit: BoxFit.contain,
+                                image: AssetImage(
+                                    'assets/notes assets/gallery.png'),
+                              ),
+                            ),
+                          ),
+                          label: "Camera"),
+                      SpeedDialChild(
+                          child: Icon(Icons.camera_alt_outlined),
+                          label: "Camera",
+                          labelStyle: TextStyle(color: Colors.black)),
+                    ],
                   ),
                 ),
               )

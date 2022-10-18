@@ -57,7 +57,6 @@ class _HomePageState extends State<HomePage> {
                   flex: 3,
                   child: Row(
                     children: const [
-                      SizedBox(width: 10),
                       Card(
                         elevation: 5,
                         child: SizedBox(height: 50, width: 50),
@@ -101,7 +100,7 @@ class _HomePageState extends State<HomePage> {
                           icon: const Icon(
                             Icons.arrow_circle_right,
                             color: Color(0xFFFFC158),
-                            size: 48,
+                            size: 50,
                           ),
                         ),
                       ],
